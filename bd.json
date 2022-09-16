@@ -1,0 +1,64 @@
+{
+    "child": [
+        {
+            "name": "Katerina",
+            "age": 9,
+            "squad": {
+                "number": 6,
+                "amount": 20,
+                "age": "9-10",
+                "leader": {
+                    "name": "Daria",
+                    "phone": "+46655768",
+                    "age": 19
+                },
+                "hausing": {
+                    "number": 2,
+                    "free_place": 20,
+                    "all_place": 40
+                }
+            },
+            "phone": "+7654457"
+        },
+        {
+            "name": "Pasha",
+            "age": 16,
+            "squad": {
+                "number": 2,
+                "amount": 18,
+                "age": "13-16",
+                "leader": {
+                    "name": "Timur",
+                    "phone": "+4665676657",
+                    "age": 27
+                },
+                "hausing": {
+                    "number": 4,
+                    "free_place": 45,
+                    "all_place": 80
+                }
+            },
+            "phone": "+76563793"
+        },
+        {
+            "name": "Ranel",
+            "age": 15,
+            "squad": {
+                "number": 2,
+                "amount": 18,
+                "age": "13-16",
+                "leader": {
+                    "name": "Timur",
+                    "phone": "+4665676657",
+                    "age": 27
+                },
+                "hausing": {
+                    "number": 4,
+                    "free_place": 45,
+                    "all_place": 80
+                }
+            },
+            "phone": "+7653738939"
+        }
+    ]
+}
