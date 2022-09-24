@@ -20,10 +20,10 @@ for i in result:
             if i.age == int(criter[1]):
                 a += 1
         if criter[0] == 'squad':
-            if i.name == criter[1]:
+            if i.squad == criter[1]:
                 a += 1
         if criter[0] == 'phone':
-            if i.name == criter[1]:
+            if i.phone == criter[1]:
                 a += 1
         if a == 0:
             break
