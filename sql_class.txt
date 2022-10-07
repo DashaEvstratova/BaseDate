@@ -1,0 +1,61 @@
+CREATE TABLE housing (
+number integer PRIMARY KEY,
+all_place integer NOT NULL,
+occupied_places integer NOT NULL,
+free_place integer GENERATED ALWAYS AS (all_place - occupied_places) STORED
+);
+
+CREATE TABLE squads (
+number integer PRIMARY KEY,
+amount integer NOT NULL,
+age integer NOT NULL,
+leader_name varchar(255) NOT NULL,
+number_housing integer NOT NULL,
+CONSTRAINT fk_leader
+FOREIGN KEY(leader_name)
+REFERENCES leaders(name)
+ON UPDATE CASCADE
+ON DELETE RESTRICT,
+CONSTRAINT fk_housing
+FOREIGN KEY(number_housing)
+REFERENCES housing(number)
+ON UPDATE CASCADE
+ON DELETE RESTRICT
+);
+
+CREATE TABLE leaders (
+name varchar(255) PRIMARY KEY,
+phone varchar(255) NOT NULL,
+age_leader integer NOT NULL
+);
+
+CREATE TABLE children(
+name_child varchar(255) PRIMARY KEY,
+age_child integer NOT NULL,
+number_squad integer NOT NULL,
+phone_parent varchar(255) NOT NULL,
+CONSTRAINT fk_squads
+FOREIGN KEY(number_squad)
+REFERENCES squads(number)
+ON UPDATE CASCADE
+ON DELETE CASCADE
+);
+
+
+
+
+INSERT INTO housing VALUES (2, 40, 20);
+INSERT INTO housing VALUES (4, 80, 45);
+INSERT INTO squads VALUES (1, 20, 10, 'Daria', 2);
+INSERT INTO squads VALUES (2, 18, 16, 'Timur', 4);
+INSERT INTO leaders VALUES ('Daria', '+46655768', 19);
+INSERT INTO leaders VALUES ('Timur', '+4665676657', 27);
+INSERT INTO children VALUES ('Katerina', 9, 1, '+7654457');
+INSERT INTO children VALUES ('Pasha', 16, 2, '+76563793');
+INSERT INTO children VALUES ('Ranel', 15, 2, '+7653738939');
+
+
+
+psql -U postgres
+\c db_camp
+psql \! chcp 1251
